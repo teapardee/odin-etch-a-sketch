@@ -1,5 +1,12 @@
 /* Button */
 
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .header {
   display: flex;
   justify-content: center;
@@ -16,10 +23,13 @@
 .grid-container {
   display: grid;
   justify-content: center;
-  max-width: 960px;
-  grid-template-columns: repeat(16, 20px);
-  gap: 10px;
-  grid-auto-rows: 20px;
+  align-content: center;
+
+  width: 960px;
+  height: 960px;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+  gap: 1px;
 }
 
 .div-square {

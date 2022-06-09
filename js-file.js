@@ -30,6 +30,7 @@ function checkAnswer(Answer) {
 
   if (output > 100) {
     alert("Please enter number between 1 and 100!");
+    git;
     retrieveAnswer();
   } else {
     return output;
@@ -38,10 +39,19 @@ function checkAnswer(Answer) {
 
 /* Adjust Grid */
 
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
+
 function adjustGrid(gridNumber) {
   const gridContainer = document.querySelector(".grid-container");
 
+  removeAllChildNodes(gridContainer);
+
   gridContainer.style.gridTemplateColumns = `repeat(${gridNumber}, 1fr)`;
+  gridContainer.style.gridTemplateRows = `repeat(${gridNumber}, 1fr)`;
 
   let iterations = gridNumber * gridNumber;
 
