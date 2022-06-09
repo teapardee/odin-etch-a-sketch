@@ -1,0 +1,31 @@
+/* Button */
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.prompt {
+  min-height: 50px;
+  min-width: 200px;
+  margin: 20px;
+}
+
+/* Grid */
+
+.grid-container {
+  display: grid;
+  justify-content: center;
+  max-width: 960px;
+  grid-template-columns: repeat(16, 20px);
+  gap: 10px;
+  grid-auto-rows: 20px;
+}
+
+.div-square {
+  background-color: blue;
+}
+
+.div-square:hover {
+  background-color: white;
+}
