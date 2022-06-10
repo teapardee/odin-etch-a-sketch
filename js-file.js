@@ -1,4 +1,4 @@
-/* Event Listeners */
+// Event Listeners
 
 document.addEventListener(
   "DOMContentLoaded",
@@ -13,33 +13,27 @@ document.addEventListener(
 );
 
 const button = document.querySelector(".prompt");
-button.addEventListener("click", retrieveAnswer);
+button.addEventListener("click", retrieveGridSize);
 
 const container = document.querySelector(".grid-container");
 
-/* Retrieve & Check Answer */
+// Retrieve & Check Prompt Input
 
-function retrieveAnswer() {
-  let answer = prompt("Enter number of squares per side:");
-  let gridNumber = checkAnswer(answer);
-  adjustGrid(gridNumber);
-}
+function retrieveGridSize() {
+  let gridSize = prompt("Enter number of squares per side:");
+  gridSize = parseInt(gridSize);
 
-function checkAnswer(Answer) {
-  let output = parseInt(Answer);
-
-  if (output > 100) {
+  if (gridSize > 100 || gridSize < 1 || Number.isNaN(gridSize)) {
     alert("Please enter number between 1 and 100!");
-    git;
-    retrieveAnswer();
+    retrieveGridSize();
   } else {
-    return output;
+    adjustGrid(gridSize);
   }
 }
 
-/* Adjust Grid */
+// Adjust Grid
 
-function removeAllChildNodes(parent) {
+function clearGrid(parent) {
   while (parent.firstChild) {
     parent.removeChild(parent.firstChild);
   }
@@ -48,7 +42,7 @@ function removeAllChildNodes(parent) {
 function adjustGrid(gridNumber) {
   const gridContainer = document.querySelector(".grid-container");
 
-  removeAllChildNodes(gridContainer);
+  clearGrid(gridContainer);
 
   gridContainer.style.gridTemplateColumns = `repeat(${gridNumber}, 1fr)`;
   gridContainer.style.gridTemplateRows = `repeat(${gridNumber}, 1fr)`;
