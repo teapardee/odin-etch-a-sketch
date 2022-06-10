@@ -1,4 +1,4 @@
-/* Button */
+/* Buttons */
 
 body {
   display: flex;
@@ -7,12 +7,24 @@ body {
   align-items: center;
 }
 
-.header {
+.top-btn-container {
   display: flex;
   justify-content: center;
 }
 
 .prompt {
+  min-height: 50px;
+  min-width: 200px;
+  margin: 20px;
+}
+
+.bottom-btn-container {
+  display: flex;
+  width: 480px;
+  justify-content: space-between;
+}
+
+.shake {
   min-height: 50px;
   min-width: 200px;
   margin: 20px;
@@ -24,18 +36,14 @@ body {
   display: grid;
   justify-content: center;
   align-content: center;
-
-  width: 960px;
-  height: 960px;
+  width: 480px;
+  height: 480px;
+  border: black 5px solid;
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(16, 1fr);
   gap: 1px;
 }
 
 .div-square {
-  background-color: blue;
-}
-
-.div-square:hover {
-  background-color: white;
+  background-color: grey;
 }

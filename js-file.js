@@ -1,26 +1,40 @@
+// Global Variables
+
+var gridSize;
+
 // Event Listeners
 
 document.addEventListener(
   "DOMContentLoaded",
   () => {
+    gridSize = 16;
+
     for (let i = 0; i < 256; i++) {
       const div = document.createElement("div");
       div.className = "div-square";
+      div.addEventListener("mouseover", () => {
+        div.style.backgroundColor = "black";
+      });
       container.appendChild(div);
     }
   },
   false
 );
 
-const button = document.querySelector(".prompt");
-button.addEventListener("click", retrieveGridSize);
+const adjustBtn = document.querySelector(".prompt");
+adjustBtn.addEventListener("click", retrieveGridSize);
 
 const container = document.querySelector(".grid-container");
+
+const shakeBtn = document.querySelector(".shake");
+shakeBtn.addEventListener("click", () => {
+  adjustGrid(gridSize);
+});
 
 // Retrieve & Check Prompt Input
 
 function retrieveGridSize() {
-  let gridSize = prompt("Enter number of squares per side:");
+  gridSize = prompt("Enter number of squares per side:");
   gridSize = parseInt(gridSize);
 
   if (gridSize > 100 || gridSize < 1 || Number.isNaN(gridSize)) {
@@ -49,10 +63,12 @@ function adjustGrid(gridNumber) {
 
   let iterations = gridNumber * gridNumber;
 
-  console.log(iterations);
   for (let i = 0; i < iterations; i++) {
     const div = document.createElement("div");
     div.className = "div-square";
+    div.addEventListener("mouseover", () => {
+      div.style.backgroundColor = "black";
+    });
     container.appendChild(div);
   }
 }
