@@ -21,10 +21,10 @@ document.addEventListener(
   false
 );
 
-const adjustBtn = document.querySelector(".prompt");
+const adjustBtn = document.querySelector(".adjust");
 adjustBtn.addEventListener("click", retrieveGridSize);
 
-const container = document.querySelector(".grid-container");
+const container = document.querySelector(".grid");
 
 const shakeBtn = document.querySelector(".shake");
 shakeBtn.addEventListener("click", () => {
@@ -54,9 +54,9 @@ function clearGrid(parent) {
 }
 
 function adjustGrid(gridNumber) {
-  const gridContainer = document.querySelector(".grid-container");
+  const grid = document.querySelector(".grid");
 
-  clearGrid(gridContainer);
+  clearGrid(grid);
 
   gridContainer.style.gridTemplateColumns = `repeat(${gridNumber}, 1fr)`;
   gridContainer.style.gridTemplateRows = `repeat(${gridNumber}, 1fr)`;
