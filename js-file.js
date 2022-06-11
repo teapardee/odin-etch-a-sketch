@@ -15,7 +15,7 @@ document.addEventListener(
       div.addEventListener("mouseover", () => {
         div.style.backgroundColor = "black";
       });
-      container.appendChild(div);
+      grid.appendChild(div);
     }
   },
   false
@@ -24,11 +24,21 @@ document.addEventListener(
 const adjustBtn = document.querySelector(".adjust");
 adjustBtn.addEventListener("click", retrieveGridSize);
 
-const container = document.querySelector(".grid");
+const grid = document.querySelector(".grid");
 
 const shakeBtn = document.querySelector(".shake");
 shakeBtn.addEventListener("click", () => {
-  adjustGrid(gridSize);
+  blackGrid(gridSize);
+});
+
+const rainbowBtn = document.querySelector(".rainbow");
+rainbowBtn.addEventListener("click", () => {
+  rainbowGrid(gridSize);
+});
+
+const blackBtn = document.querySelector(".black");
+blackBtn.addEventListener("click", () => {
+  blackGrid(gridSize);
 });
 
 // Retrieve & Check Prompt Input
@@ -41,11 +51,11 @@ function retrieveGridSize() {
     alert("Please enter number between 1 and 100!");
     retrieveGridSize();
   } else {
-    adjustGrid(gridSize);
+    blackGrid(gridSize);
   }
 }
 
-// Adjust Grid
+// Grid
 
 function clearGrid(parent) {
   while (parent.firstChild) {
@@ -53,13 +63,13 @@ function clearGrid(parent) {
   }
 }
 
-function adjustGrid(gridNumber) {
+function blackGrid(gridNumber) {
   const grid = document.querySelector(".grid");
 
   clearGrid(grid);
 
-  gridContainer.style.gridTemplateColumns = `repeat(${gridNumber}, 1fr)`;
-  gridContainer.style.gridTemplateRows = `repeat(${gridNumber}, 1fr)`;
+  grid.style.gridTemplateColumns = `repeat(${gridNumber}, 1fr)`;
+  grid.style.gridTemplateRows = `repeat(${gridNumber}, 1fr)`;
 
   let iterations = gridNumber * gridNumber;
 
@@ -69,6 +79,28 @@ function adjustGrid(gridNumber) {
     div.addEventListener("mouseover", () => {
       div.style.backgroundColor = "black";
     });
-    container.appendChild(div);
+    grid.appendChild(div);
+  }
+}
+
+function rainbowGrid(gridNumber) {
+  const grid = document.querySelector(".grid");
+
+  clearGrid(grid);
+
+  grid.style.gridTemplateColumns = `repeat(${gridNumber}, 1fr)`;
+  grid.style.gridTemplateRows = `repeat(${gridNumber}, 1fr)`;
+
+  let iterations = gridNumber * gridNumber;
+
+  for (let i = 0; i < iterations; i++) {
+    const div = document.createElement("div");
+    div.className = "div-square";
+    div.addEventListener("mouseover", () => {
+      div.style.backgroundColor = `#${Math.floor(
+        Math.random() * 16777215
+      ).toString(16)}`;
+    });
+    grid.appendChild(div);
   }
 }
