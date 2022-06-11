@@ -5,6 +5,7 @@ body {
   grid-template-columns: 400px auto 1fr;
   grid-template-rows: auto 1fr 1fr;
   justify-content: center;
+  background-color: rgb(3, 104, 181, 0.3);
 }
 
 .header {
@@ -13,10 +14,41 @@ body {
   grid-row: 1/2;
   justify-content: center;
   margin: 20px;
-  font-size: 24px;
+  font-family: "Patrick Hand", cursive;
+  font-size: 48px;
 }
 
 /* Buttons */
+
+.side-btn {
+  min-height: 50px;
+  min-width: 150px;
+  margin-left: 15px;
+  margin-top: 15px;
+  background-color: white;
+  color: black;
+  border: none;
+}
+
+.bottom-btn {
+  min-height: 50px;
+  min-width: 200px;
+  margin: 15px;
+  background-color: white;
+  color: black;
+  border: none;
+}
+
+.side-btn-header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-family: "Patrick Hand", cursive;
+  margin-left: 15px;
+  min-height: 50px;
+  min-width: 150px;
+  letter-spacing: 2px;
+}
 
 .side-btn-container {
   display: flex;
@@ -27,37 +59,12 @@ body {
   align-items: flex-start;
 }
 
-.black {
-  min-height: 50px;
-  min-width: 200px;
-  margin: 10px;
-}
-
-.rainbow {
-  min-height: 50px;
-  min-width: 200px;
-  margin-left: 10px;
-  margin-bottom: 10px;
-}
-
 .bottom-btn-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   grid-column: 2/3;
   grid-row: 3/4;
-}
-
-.adjust {
-  min-height: 50px;
-  min-width: 200px;
-  margin: 20px;
-}
-
-.shake {
-  min-height: 50px;
-  min-width: 200px;
-  margin: 20px;
 }
 
 /* Mid-Section */
@@ -83,12 +90,12 @@ body {
   align-content: center;
   width: 480px;
   height: 480px;
-  border: black 5px solid;
+  border: rgb(3, 104, 181) 5px solid;
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(16, 1fr);
   gap: 1px;
 }
 
 .div-square {
-  background-color: grey;
+  background-color: white;
 }

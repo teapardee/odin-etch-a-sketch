@@ -2,7 +2,7 @@
 
 var gridSize;
 
-// Event Listeners
+// Initial Load
 
 document.addEventListener(
   "DOMContentLoaded",
@@ -21,22 +21,24 @@ document.addEventListener(
   false
 );
 
-const adjustBtn = document.querySelector(".adjust");
+// Event Listeners
+
+const adjustBtn = document.querySelector("#adjust");
 adjustBtn.addEventListener("click", retrieveGridSize);
 
 const grid = document.querySelector(".grid");
 
-const shakeBtn = document.querySelector(".shake");
+const shakeBtn = document.querySelector("#shake");
 shakeBtn.addEventListener("click", () => {
   blackGrid(gridSize);
 });
 
-const rainbowBtn = document.querySelector(".rainbow");
+const rainbowBtn = document.querySelector("#rainbow");
 rainbowBtn.addEventListener("click", () => {
   rainbowGrid(gridSize);
 });
 
-const blackBtn = document.querySelector(".black");
+const blackBtn = document.querySelector("#black");
 blackBtn.addEventListener("click", () => {
   blackGrid(gridSize);
 });
