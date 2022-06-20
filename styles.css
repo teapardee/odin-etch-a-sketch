@@ -75,6 +75,12 @@ body {
   grid-row: 3/4;
 }
 
+button:hover {
+  transform: scale(1.05);
+  background-color: rgb(3, 94, 163);
+  color: white;
+}
+
 /* Mid-Section */
 
 .middle-left-section {
