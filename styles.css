@@ -1,8 +1,12 @@
+button {
+  padding: 0px;
+}
+
 /* Title */
 
 body {
   display: grid;
-  grid-template-columns: 400px auto 1fr;
+  grid-template-columns: 200px auto 200px;
   grid-template-rows: auto 1fr 1fr;
   justify-content: center;
   background-color: rgb(3, 104, 181, 0.3);
@@ -10,10 +14,10 @@ body {
 
 .header {
   display: flex;
-  grid-column: 2/3;
+  grid-column: 1/4;
   grid-row: 1/2;
-  justify-content: center;
-  margin: 20px;
+  justify-self: center;
+  margin: 40px;
   font-family: "Patrick Hand", cursive;
   font-size: 48px;
 }
@@ -23,20 +27,22 @@ body {
 .side-btn {
   min-height: 50px;
   min-width: 150px;
-  margin-left: 15px;
-  margin-top: 15px;
+  margin-left: 20px;
+  margin-top: 20px;
   background-color: white;
   color: black;
   border: none;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .bottom-btn {
   min-height: 50px;
   min-width: 200px;
-  margin: 15px;
+  margin: 20px;
   background-color: white;
   color: black;
   border: none;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .side-btn-header {
@@ -44,10 +50,12 @@ body {
   justify-content: center;
   align-items: flex-end;
   font-family: "Patrick Hand", cursive;
-  margin-left: 15px;
+  margin-left: 20px;
+  padding-bottom: 10px;
   min-height: 50px;
   min-width: 150px;
   letter-spacing: 2px;
+  border-bottom: rgb(3, 94, 163) 2px solid;
 }
 
 .side-btn-container {
@@ -94,6 +102,7 @@ body {
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(16, 1fr);
   gap: 1px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .div-square {
